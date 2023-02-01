@@ -4,7 +4,26 @@
 # повернуты вверх одной и той же стороной. Выведите минимальное
 # количество монет, которые нужно перевернуть.
 
+# рандит [0,1] выбрать чего меньше, то и выводить
 from random import randint
 n = int(input('Введите количество монеток: '))
+coins = []
 
-# рандит [0,1] выбрать чего меньше, то и выводить
+for i in range(0, n):
+    x = randint(0,1)
+    coins.append(x)
+print(f'Всего монеток {coins}')
+
+zero = 0
+one = 0
+for coin in coins:
+    if coin == 0:
+        zero += 1
+    else:
+        one += 1
+
+min_= zero
+if one < zero:
+    min = one
+
+print(min)
